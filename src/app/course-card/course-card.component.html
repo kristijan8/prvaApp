@@ -1,10 +1,15 @@
-<div class="course-card">
+<div *ngIf="kurs" [ngClass]="klasi()">
   <div class="course-title">
-    <p>{{ indeks + 1 + " " + kurs?.description }}</p>
+    <p>{{ indeks + 1 + " " + kurs.description }}</p>
   </div>
-  <img width="300" [src]="kurs?.iconUrl" alt="Angular Core nene" />
+  <img
+    *ngIf="kurs?.iconUrl"
+    width="300"
+    [src]="kurs.iconUrl"
+    alt="Angular Core nene"
+  />
   <div class="course-description">
-    {{ kurs?.longDescription }}
+    {{ kurs.longDescription }}
   </div>
   <button (click)="OnCrsViewed()">View</button>
 </div>

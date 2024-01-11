@@ -1,14 +1,11 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Course } from '../../course';
-import {
-  JQueryStyleEventEmitter,
-  NodeCompatibleEventEmitter,
-  NodeStyleEventEmitter,
-} from 'rxjs/internal/observable/fromEvent';
+import { CommonModule } from '@angular/common';
+import { NgIf } from '@angular/common';
 @Component({
   selector: 'course-card',
   standalone: true,
-  imports: [],
+  imports: [CommonModule, NgIf],
   templateUrl: './course-card.component.html',
   styleUrl: './course-card.component.css',
 })
@@ -27,4 +24,7 @@ export class CourseCardComponent implements OnInit {
     this.cuci?.emit(this.kurs);
   }
   ngOnInit() {}
+  klasi() {
+    return { ' course-card': true, begin: true };
+  }
 }
